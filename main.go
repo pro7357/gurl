@@ -24,7 +24,7 @@ func init() {
 	log.SetFlags(0)
 }
 
-func gurl(url string) {
+func Gurl(url string) {
 	allocCtx, cancel := chromedp.NewExecAllocator(context.Background())
 	if strings.HasPrefix(proxy, "socks5:") {
 		opts := append(chromedp.DefaultExecAllocatorOptions[:],
@@ -54,13 +54,13 @@ func main() {
 	urls := flag.Args()
 	if len(urls) != 0 {
 		for _, url := range urls {
-			gurl(url)
+			Gurl(url)
 		}
 	} else {
 		sc := bufio.NewScanner(os.Stdin)
 		for sc.Scan() {
 			url := sc.Text()
-			gurl(url)
+			Gurl(url)
 		}
 	}
 }
