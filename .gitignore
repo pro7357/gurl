@@ -1,10 +1,11 @@
 # Block everything
 /*
 
-# Allow some
+# Allow generic
 !.gitignore
 !README.md
 !LICENSE
 
 # Allow specific 
 !main.go
+!gurl.go
