@@ -6,6 +6,10 @@
 !README.md
 !LICENSE
 
+# Allow Go module files
+!go.mod
+!go.sum
+
 # Allow specific 
 !/cmd/gurl/main.go
 !gurl.go

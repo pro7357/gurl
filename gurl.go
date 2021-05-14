@@ -1,12 +1,27 @@
-package main
+package gurl
 
 import (
 	"context"
+	"flag"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/chromedp/chromedp"
 )
+
+var (
+	userJS string
+	proxy  string
+)
+
+func init() {
+	flag.StringVar(&userJS, "j", `[...new Set([... document.links].map(n => n.href))].join("\n")`, "the JS to run on each page")
+	flag.StringVar(&proxy, "p", os.Getenv("HTTPS_PROXY"), "proxy setting")
+
+	log.SetOutput(os.Stdout)
+	log.SetFlags(0)
+}
 
 func Gurl(url string) {
 	allocCtx, cancel := chromedp.NewExecAllocator(context.Background())

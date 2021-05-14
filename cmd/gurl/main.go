@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"flag"
 	"os"
-	
+
 	"github.com/pro7357/gurl"
 )
 
