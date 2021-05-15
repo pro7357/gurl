@@ -30,8 +30,8 @@ func Gurl(url string) {
 			chromedp.ProxyServer(proxy),
 		)
 		allocCtx, cancel = chromedp.NewExecAllocator(context.Background(), opts...)
-		defer cancel()
 	}
+	defer cancel()
 	ctx, cancel := chromedp.NewContext(allocCtx)
 	defer cancel()
 
