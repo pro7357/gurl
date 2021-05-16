@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"flag"
+	"fmt"
 	"os"
 
 	"github.com/pro7357/gurl"
@@ -14,13 +15,13 @@ func main() {
 	urls := flag.Args()
 	if len(urls) != 0 {
 		for _, url := range urls {
-			gurl.Gurl(url)
+			fmt.Println(gurl.Gurl(url))
 		}
 	} else {
 		sc := bufio.NewScanner(os.Stdin)
 		for sc.Scan() {
 			url := sc.Text()
-			gurl.Gurl(url)
+			fmt.Println(gurl.Gurl(url))
 		}
 	}
 }
